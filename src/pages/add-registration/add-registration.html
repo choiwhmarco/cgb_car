@@ -1,0 +1,81 @@
+<!--
+  Generated template for the AddRegistrationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar align-title="center" color="primary">
+    <ion-title>出车登记</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding has-subheader="false" class="content" style="background: RGBA(244, 244, 244, 1)">
+  <ion-list>
+    <ion-item>
+      <ion-label class="item" color="dark">选择车辆</ion-label>
+      <ion-select [(ngModel)]="gaming" interface="popover">
+        <ion-option value="nes">NES</ion-option>
+        <ion-option value="n64">Nintendo64</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label class="input_label" color="dark">出车里程数</ion-label>
+      <ion-input type="text" text-end placeholder="公里"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="dark">出车时间</ion-label>
+      <ion-datetime displayFormat="MM/DD, YYYY HH:mm" cancelText=取消 doneText=确定 [(ngModel)]="myDate"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item (click)="goChooseOrderComment()">
+      <ion-label class="item" color="dark">用车事由</ion-label>
+      <ion-label text-end class="item-note" style="color: #666;" *ngIf="!this.dataFromOtherPage">
+        快速选择
+      </ion-label>
+      <ion-label class="item-note" text-end style="color: #666;" *ngIf="this.dataFromOtherPage">
+        已填写
+      </ion-label>
+
+    </ion-item>
+    <ion-item>
+      <ion-textarea type="text" text-left clearInput="true" [(ngModel)]="this.dataFromOtherPage" placeholder="请选择用车事由" rows="5">
+      </ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea type="text" clearInput="true" placeholder="请输入工作任务简述" rows="5">
+
+      </ion-textarea>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item inset>
+      <ion-label class="input_label" color="dark">始发地</ion-label>
+      <ion-textarea type="text" text-right class="address-input" text-end placeholder="请输入地点" [readonly]="true" [(ngModel)]="this.oAddress" (click)="origin()" rows="3">
+      </ion-textarea>
+    </ion-item>
+
+
+
+
+    <ion-item class="input_label" inset *ngFor="let att of anArray; let idx = index">
+      <button ion-button class="removeAddressImg" (click)="removeDestination(idx)"></button>
+      <ion-label color="dark" (click)="destination(idx)">目的地{{idx+1}}</ion-label>
+      <ion-textarea type="text"  text-right class="address-input" placeholder="请输入地点" [(ngModel)]="anArray[idx]" (click)="destination(idx)" rows="3">
+      </ion-textarea>
+      <button ion-button class="removeAddressImg" item-right (click)="removeDestination(idx)"></button>
+    </ion-item>
+    <button ion-button class="addAddressImg" (click)="addDestination()"></button>
+  </ion-list>
+
+  <button class="button button-block button-positive" full (click)="save()">
+    出车
+  </button>
+
+
+</ion-content>

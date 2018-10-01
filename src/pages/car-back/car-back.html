@@ -1,0 +1,48 @@
+<!--
+  Generated template for the CarBackPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>车辆回场</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-divider>
+      <ion-label>正式出车：</ion-label>
+    </ion-item-divider>
+    <ion-item>
+      <ion-label text-start>上次回场里程数：</ion-label>
+      <ion-label text-end>{{this.latestMileage}}公里</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label text-start>实际出场里程：</ion-label>
+      <ion-label text-end>{{this.realMileage}}公里</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label text-start>出车时间</ion-label>
+      <ion-label text-end>{{this.taskStartTime}}</ion-label>
+    </ion-item>
+    <ion-item-divider>
+      <ion-label>车辆回场：</ion-label>
+    </ion-item-divider>
+    <ion-item>
+      <ion-label text-start>车辆回场里程:</ion-label>
+      <ion-input type="text" placeholder="请输入公里数" text-end></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label text-start>本次累计出车里程：</ion-label>
+      <ion-label text-end>{{this.taskMileage}}公里</ion-label>
+    </ion-item>
+  </ion-list>
+  <button class="button button-block button-positive" full (click)="return()">
+    车辆回场
+  </button>
+</ion-content>

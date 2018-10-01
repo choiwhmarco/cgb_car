@@ -1,0 +1,39 @@
+page-record {
+  .registration-tab {
+    text-align: center;
+    padding: 0;
+  }
+  .active {
+    color: #0077c0;
+    background: #fafafa;
+    line-height: 30px;
+    padding: 10px;
+  }
+  .col {
+    line-height: 30px;
+    padding: 10px;
+    color: RGBA(153, 153, 153, 1);
+  }
+  .col_width{
+    width:50%;
+    line-height: 30px;
+    padding: 10px;
+  }
+  .col_p {
+    margin: 0;
+  }
+
+  .active {
+    color: #0077c0;
+    background: #fafafa;
+  }
+
+  .button-positive {
+    line-height: 33px;
+    min-width: 35px;
+    min-height: 35px;
+    padding: 0 10px;
+    background:#387ef5;
+    color:#f7f7f7;
+  }
+}

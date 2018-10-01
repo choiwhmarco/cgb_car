@@ -1,0 +1,47 @@
+page-add-maintain-order {
+  .button-positive {
+    line-height: 33px;
+    min-width: 35px;
+    min-height: 35px;
+    padding: 0 10px;
+    background:#387ef5;
+    color:#e6e6e6;
+  }
+  .item-note {
+    color: #666;
+    font-size: 15px;
+  }
+  .item-input{
+    text-align: right;
+    margin-right: 12px;
+    padding-right: 0px;
+  }
+
+  .comment_detail {
+    padding: 16px;
+    margin: 0 0 -12px 0;;
+    background: #fff;
+  }
+  .chooseSpan {
+    display: inline-block;
+    color: #666;
+    font-size: 12px;
+    font-family: '微软雅黑', serif;
+    background: #eeeff1;
+    padding: 4px 6px;
+    margin: 0 6px 6px 0;
+    border-radius: 4px;
+    border: 1px solid transparent;
+  }
+  .chooseDriver {
+    color: #666;
+    font-size: 15px;
+  }
+  .choosed {
+    color: #666;
+    font-size: 13px;
+    text-align: right;
+  }
+
+
+}
