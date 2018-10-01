@@ -1,0 +1,89 @@
+<!--
+  Generated template for the UseCarCountPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>部门用车统计</ion-title>
+    <ion-buttons end>
+      <button class="button-positive" (click)="query()">查询</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label text-start color="dark">单位:</ion-label>
+      <ion-select [(ngModel)]="org" interface="popover">
+        <ion-option value="public">1</ion-option>
+        <ion-option value="production">2</ion-option>
+        <ion-option value="special">3</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label text-start color="dark">部门:</ion-label>
+      <ion-select [(ngModel)]="dept" interface="popover">
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label text-start color="dark">车辆性质:</ion-label>
+      <ion-select [(ngModel)]="carType" interface="popover">
+        <ion-option value="all">所有性质1</ion-option>
+        <ion-option value="public">公务车</ion-option>
+        <ion-option value="production">生产车</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label color="dark">时间:</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="startDate" placeholder="开始" cancelText=取消 doneText=确定></ion-datetime>
+      <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="endDate" min={{startDate}} placeholder="结束" cancelText=取消 doneText=确定></ion-datetime>
+    </ion-item>
+    <ion-item (click)="goChooseStatus()">
+      <ion-label text-start>订单状态:</ion-label>
+      <ion-label *ngIf="statusList != null" text-end>已选择</ion-label>
+      <ion-label *ngIf="statusList == null" text-end>请选择</ion-label>
+    </ion-item>
+    <ion-item-divider>
+      <ion-label color="primary">汇总信息：</ion-label>
+    </ion-item-divider>
+    <ion-item>
+      <ion-label text-start>总用车单数：</ion-label>
+      <ion-label text-end>-单</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label text-start>总里程数：</ion-label>
+      <ion-label text-end>-公里</ion-label>
+    </ion-item>
+    <ion-item-divider>
+      <ion-label color="primary">用车明细：</ion-label>
+    </ion-item-divider>
+    <div class="table_div">
+      <table class="use_car_table">
+        <tr>
+          <th>单号</th>
+          <th>申请人</th>
+          <th>开始时间</th>
+          <th>状态</th>
+        </tr>
+        <tr ng-repeat="item in views.orderList.list track by $index">
+          <td>{{this.id}}</td>
+          <td>{{this.applicantName}}</td>
+          <td>{{this.startTime | date: 'MM/dd HH:mm'}}</td>
+          <td>{{this.statusString}}</td>
+        </tr>
+      </table>
+    </div>
+  </ion-list>
+
+
+
+</ion-content>

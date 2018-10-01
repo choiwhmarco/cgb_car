@@ -1,0 +1,22 @@
+page-comment {
+  ul {
+    padding: 0px;
+
+    &.rating li {
+      background: none;
+      color: #ffb400;
+
+      ion-icon {
+        font-size: 45px;
+      }
+    }
+  }
+  .button-positive {
+    line-height: 33px;
+    min-width: 35px;
+    min-height: 35px;
+    padding: 0 10px;
+    background:#387ef5;
+    color:#e6e6e6;
+  }
+}

@@ -1,0 +1,133 @@
+<!--
+  Generated template for the ApplydoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar align-title="center" color="primary">
+    <ion-title>申请用车</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding has-subheader="false" class="content" style="background: RGBA(244, 244, 244, 1)">
+  <ion-list class="list">
+    <ion-item class="item">
+      <ion-label>
+        用车部门
+      </ion-label>
+      <ion-label text-end class="item-note" style="color: #000;">dept</ion-label>
+    </ion-item>
+    <ion-item class="item">
+      <ion-label>
+        申&ensp;请&ensp;人
+      </ion-label>
+      <ion-label text-end class="item-note" style="color: #000;">name</ion-label>
+    </ion-item>
+    <ion-item class="item-input">
+      <ion-label text-left class="input-label" color="dark">电话:</ion-label>
+      <ion-input type="text" text-end placeholder="联系电话"></ion-input>
+    </ion-item>
+    <ion-item class="item">
+      <ion-label class="item" color="dark">审&ensp;批&ensp;员</ion-label>
+      <ion-select [(ngModel)]="gaming" interface="popover">
+        <ion-option value="nes">NES</ion-option>
+        <ion-option value="n64">Nintendo64</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="item-input">
+      <ion-label text-left class="input-label" color="dark">人数:</ion-label>
+      <ion-input type="number" text-end placeholder="请输入出行人数"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="item" color="dark">用车性质</ion-label>
+      <ion-select [(ngModel)]="useType" interface="popover">
+        <ion-option value="public">公务用车</ion-option>
+        <ion-option value="production">生产用车</ion-option>
+        <ion-option value="special">特种用车</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label color="dark" class="item">用车时间:</ion-label>
+      <ion-datetime displayFormat="MM/DD, YYYY HH:mm" min="2017" minuteValues="00,05,10,15,20,25,30,35,40,45,50,55" cancelText=取消 doneText=确定 [(ngModel)]="myDate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label class="item" color="dark">用车时长:</ion-label>
+      <ion-select [(ngModel)]="useTime" interface="popover">
+        <ion-option value="threehour">3小时</ion-option>
+        <ion-option value="sixhour">6小时</ion-option>
+        <ion-option value="oneday">1天</ion-option>
+        <ion-option *ngIf="flag==one" value="customday"><ion-label>{{this.data}}</ion-label>天</ion-option>
+        <ion-option value="custom" (ionSelect)="doPrompt()">自定义</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="comment_detail">
+      <div class="choose_span">
+        <span class="chooseDriver">申请车型&nbsp;&nbsp;&nbsp;</span>
+        <span class="chooseSpan"
+              ng-repeat="item in views.simpleCarTypeArr track by $index"
+              ng-class="{cur:$index==views.simpleCarTypeSelectedIndex}"
+              ng-click="toggleCarTypeSpan($index)">car</span>
+      </div>
+      <div class="choosed" id="choosedCarType">
+        已选择：
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="item" color="dark">选择司机</ion-label>
+      <ion-select [(ngModel)]="choosedDriver" interface="popover" (ionChange)="onChange($event)">
+        <ion-option value="self">自驾</ion-option>
+        <ion-option value="system">系统分配</ion-option>
+        <ion-option value="pickDriver" *ngIf="flagDriver==zero">选择司机</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item (click)="goChooseOrderComment()">
+      <ion-label class="item" color="dark">用车事由</ion-label>
+      <ion-label text-end class="item-note" style="color: #666;" *ngIf="!this.dataFromOtherPage">
+        快速选择
+      </ion-label>
+      <ion-label class="item-note" style="color: #666;" *ngIf="this.dataFromOtherPage">
+        已填写
+      </ion-label>
+    </ion-item>
+    <ion-item class="item item-input">
+      <ion-textarea type="text" text-left clearInput="true" [(ngModel)]="this.dataFromOtherPage" placeholder="请选择用车事由" rows="3">
+      </ion-textarea>
+    </ion-item>
+    <ion-item class="item">
+      工作任务简述
+    </ion-item>
+    <ion-item class="item item-input">
+      <ion-textarea type="text" text-left clearInput="true" placeholder="请输入工作任务简述" rows="3">
+      </ion-textarea>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-label class="input_label" color="dark">始发地</ion-label>
+      <ion-textarea type="text" text-right class="address-input" text-end placeholder="请输入地点" [readonly]="true" [(ngModel)]="this.oAddress" (click)="origin()" rows="3">
+      </ion-textarea>
+    </ion-item>
+
+
+
+
+    <ion-item class="input_label" *ngFor="let att of anArray; let idx = index">
+      <ion-label color="dark" (click)="destination(idx)">目的地{{idx+1}}</ion-label>
+      <ion-textarea type="text" class="address-input" placeholder="请输入地点" [(ngModel)]="anArray[idx]" (click)="destination(idx)" rows="3">
+      </ion-textarea>
+      <button ion-button class="removeAddressImg" item-right (click)="removeDestination(idx)"></button>
+    </ion-item>
+    <button ion-button class="addAddressImg" (click)="addDestination()"></button>
+  </ion-list>
+
+  <button class="button button-block button-positive" full (click)="sendApply()">
+    提交申请
+  </button>
+</ion-content>

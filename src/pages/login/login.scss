@@ -1,0 +1,60 @@
+page-login {
+  .login_page_content {
+    background: #f7f7f7;
+  }
+
+
+  .login_page_list_input_label{
+    width: auto;
+    background: #f7f7f7;
+  }
+
+  .login_page_list {
+    position: relative;
+  }
+
+  .login_page_forget_psw {
+    text-align: center;
+    color: #000000;
+    background: #f7f7f7;
+    text-decoration: none;
+  }
+
+
+  .loginicon_wrap {
+    text-align: center;
+    margin-top: 25px;
+    display: block;
+  }
+
+  .loginicon {
+    border: 3px white solid;
+    border-radius: 50%;
+  }
+
+  .button-positive {
+    line-height: 33px;
+    min-width: 35px;
+    min-height: 35px;
+    padding: 0 10px;
+    background:#387ef5;
+    color:#e6e6e6;
+  }
+  .smaller_icon {
+    font-size:25px; //Preferred size here
+  }
+
+
+  .track{
+    background: #f7f7f7;
+  }
+
+  .handle{
+    font-size:50px;
+  }
+
+  $colors:(
+    primary:#387ef5
+  );
+
+}

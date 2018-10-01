@@ -1,0 +1,46 @@
+<!--
+  Generated template for the MemberPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar align-title="center" color="primary">
+    <ion-title>个人中心</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding has-subheader="false" class="content">
+  <ion-list class="pic_div">
+    <ion-item class="item-avatar">
+      <img class="user_header" src="assets/imgs/memberphoto.png" width="50px">
+      <h1 ion-text class="member_name"><span class="name_span">{{this.name}}</span> </h1>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+      <ion-item item-start (click)="goModifyDepartment()">
+        <ion-icon icon-left name="key" color="positive"> </ion-icon>
+         {{this.dept}}
+        <ion-icon item-right class="arrow_color" name="arrow-forward"> </ion-icon>
+      </ion-item>
+    <ion-item item-start (click)="goResetPassword()">
+      <ion-icon icon-left name="key" color="positive"> </ion-icon>
+      修改密码
+      <ion-icon item-right class="arrow_color" name="arrow-forward"> </ion-icon>
+    </ion-item>
+    <ion-item item-start (click)="goModifyPhone()">
+      <ion-icon icon-left name="key" color="positive"> </ion-icon>
+      修改联系电话
+      <ion-icon item-right class="arrow_color" name="arrow-forward"> </ion-icon>
+    </ion-item>
+    <ion-item item-start (click)="goAboutUs()">
+      <ion-icon icon-left name="person" color="positive"> </ion-icon>
+      关于我们
+      <ion-icon item-right class="arrow_color" name="arrow-forward"> </ion-icon>
+    </ion-item>
+    <button ion-button full margin-top=30px (click)="logout()" >退出</button>
+  </ion-list>
+</ion-content>
