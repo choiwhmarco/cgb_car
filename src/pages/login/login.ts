@@ -78,6 +78,10 @@ export class LoginPage {
     this.navCtrl.setRoot(HomePage);
   }
 
+  goForgetPwd(){
+    this.navCtrl.push(ForgetPasswordPage);
+  }
+
 
   logInFail(message: String){
     let alert = this.alertCtrl.create({
@@ -111,7 +115,7 @@ export class LoginPage {
       username: name,
       password: hashPwd};
     this.showLoading();
-    this.http.post(this.url + 'login', param, httpOptions).subscribe((res:any) => {
+    this.http.post(this.url + 'v2/auth/login', param, httpOptions).subscribe((res:any) => {
       this.hideLoading();
       if (res.code == 1) {
         this.submitted = true;

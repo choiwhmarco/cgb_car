@@ -106,6 +106,64 @@ var ChooseMaintainShopPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ApplyCarConsumeLogPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__choose_car_choose_car__ = __webpack_require__(45);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the ApplyCarConsumeLogPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ApplyCarConsumeLogPage = /** @class */ (function () {
+    function ApplyCarConsumeLogPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.myDate = null;
+        this.choosedType = "wash";
+        this.wash = "wash";
+        this.gas = "gas";
+        this.choosedIsDriving = "no";
+        this.yes = "yes";
+        this.no = "no";
+        this.myDate = new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toISOString();
+    }
+    ApplyCarConsumeLogPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ApplyCarConsumeLogPage');
+    };
+    ApplyCarConsumeLogPage.prototype.goChooseCar = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__choose_car_choose_car__["a" /* ChooseCarPage */]);
+    };
+    ApplyCarConsumeLogPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-apply-car-consume-log',template:/*ion-inline-start:"C:\Users\choiw\car\src\pages\apply-car-consume-log\apply-car-consume-log.html"*/'<!--\n  Generated template for the ApplyCarConsumeLogPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar align-title="center" color="primary">\n    <ion-title>申请洗车、加油记录</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding fullscreen class="content">\n  <ion-list text-wrap>\n    <ion-item class="item">\n      <ion-label>\n        申&ensp;请&ensp;人\n      </ion-label>\n      <ion-label text-end class="item-note" style="color: #000;">name</ion-label>\n    </ion-item>\n    <ion-item (click)="goChooseCar()">\n      <ion-label class="item" color="dark">选择车辆:</ion-label>\n      <ion-label class="item-note" text-center style="color: #666;" *ngIf="!this.dataFromOtherPage">\n        请选择本次消费的车辆\n      </ion-label>\n      <ion-label class="item-note" style="color: #666;" *ngIf="this.dataFromOtherPage">\n        已选择：\n      </ion-label>\n    </ion-item>\n    <ion-item>\n      <ion-label class="item" color="dark">车牌号:</ion-label>\n      <ion-label text-end="">123</ion-label>\n    </ion-item>\n    <ion-item>\n      <ion-label color="dark">车辆类型:</ion-label>\n    </ion-item>\n    <ion-item>\n      <ion-label color="dark" class="item">业务时间:</ion-label>\n      <ion-datetime displayFormat="MM/DD, YYYY HH:mm" placeholder="请选择" cancelText=取消 doneText=确定 [(ngModel)]="myDate"></ion-datetime>\n    </ion-item>\n    <ion-item>\n      <ion-label class="item" color="dark">业务类型:</ion-label>\n      <ion-select [(ngModel)]="choosedType" interface="popover">\n        <ion-option value="wash">洗车</ion-option>\n        <ion-option value="gas">加油</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item>\n      <ion-label class="item" color="dark">是否出车过程中:</ion-label>\n      <ion-select [(ngModel)]="choosedIsDriving" interface="popover">\n        <ion-option value="no">否</ion-option>\n        <ion-option value="yes">是</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item class="item-input" *ngIf="choosedIsDriving==no">\n      <ion-label text-wrap color="dark">出场里程:</ion-label>\n      <ion-input type="text" text-end placeholder="请输入出场里程"></ion-input>\n    </ion-item>\n    <ion-item class="item-input" *ngIf="choosedIsDriving==no">\n      <ion-label text-wrap color="dark">回场里程:</ion-label>\n      <ion-input type="text" text-end placeholder="请输入回场里程"></ion-input>\n    </ion-item>\n    <ion-item class="item-input">\n      <ion-label text-wrap color="dark">费用:</ion-label>\n      <ion-input type="text" text-end placeholder="请输入费用"></ion-input>\n    </ion-item>\n  </ion-list>\n  <button class="button button-block button-positive" full (click)="sendApply()">\n    提交申请\n  </button>\n</ion-content>\n'/*ion-inline-end:"C:\Users\choiw\car\src\pages\apply-car-consume-log\apply-car-consume-log.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+    ], ApplyCarConsumeLogPage);
+    return ApplyCarConsumeLogPage;
+}());
+
+//# sourceMappingURL=apply-car-consume-log.js.map
+
+/***/ }),
+
+/***/ 116:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddRegistrationPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
@@ -204,7 +262,7 @@ var AddRegistrationPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 116:
+/***/ 117:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -261,64 +319,6 @@ var ApplyCarPeccancyPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=apply-car-peccancy.js.map
-
-/***/ }),
-
-/***/ 117:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ApplyCarConsumeLogPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__choose_car_choose_car__ = __webpack_require__(45);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-/**
- * Generated class for the ApplyCarConsumeLogPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var ApplyCarConsumeLogPage = /** @class */ (function () {
-    function ApplyCarConsumeLogPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.myDate = null;
-        this.choosedType = "wash";
-        this.wash = "wash";
-        this.gas = "gas";
-        this.choosedIsDriving = "no";
-        this.yes = "yes";
-        this.no = "no";
-        this.myDate = new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toISOString();
-    }
-    ApplyCarConsumeLogPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ApplyCarConsumeLogPage');
-    };
-    ApplyCarConsumeLogPage.prototype.goChooseCar = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__choose_car_choose_car__["a" /* ChooseCarPage */]);
-    };
-    ApplyCarConsumeLogPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-apply-car-consume-log',template:/*ion-inline-start:"C:\Users\choiw\car\src\pages\apply-car-consume-log\apply-car-consume-log.html"*/'<!--\n  Generated template for the ApplyCarConsumeLogPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar align-title="center" color="primary">\n    <ion-title>申请洗车、加油记录</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding fullscreen class="content">\n  <ion-list text-wrap>\n    <ion-item class="item">\n      <ion-label>\n        申&ensp;请&ensp;人\n      </ion-label>\n      <ion-label text-end class="item-note" style="color: #000;">name</ion-label>\n    </ion-item>\n    <ion-item (click)="goChooseCar()">\n      <ion-label class="item" color="dark">选择车辆:</ion-label>\n      <ion-label class="item-note" text-center style="color: #666;" *ngIf="!this.dataFromOtherPage">\n        请选择本次消费的车辆\n      </ion-label>\n      <ion-label class="item-note" style="color: #666;" *ngIf="this.dataFromOtherPage">\n        已选择：\n      </ion-label>\n    </ion-item>\n    <ion-item>\n      <ion-label class="item" color="dark">车牌号:</ion-label>\n      <ion-label text-end="">123</ion-label>\n    </ion-item>\n    <ion-item>\n      <ion-label color="dark">车辆类型:</ion-label>\n    </ion-item>\n    <ion-item>\n      <ion-label color="dark" class="item">业务时间:</ion-label>\n      <ion-datetime displayFormat="MM/DD, YYYY HH:mm" placeholder="请选择" cancelText=取消 doneText=确定 [(ngModel)]="myDate"></ion-datetime>\n    </ion-item>\n    <ion-item>\n      <ion-label class="item" color="dark">业务类型:</ion-label>\n      <ion-select [(ngModel)]="choosedType" interface="popover">\n        <ion-option value="wash">洗车</ion-option>\n        <ion-option value="gas">加油</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item>\n      <ion-label class="item" color="dark">是否出车过程中:</ion-label>\n      <ion-select [(ngModel)]="choosedIsDriving" interface="popover">\n        <ion-option value="no">否</ion-option>\n        <ion-option value="yes">是</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item class="item-input" *ngIf="choosedIsDriving==no">\n      <ion-label text-wrap color="dark">出场里程:</ion-label>\n      <ion-input type="text" text-end placeholder="请输入出场里程"></ion-input>\n    </ion-item>\n    <ion-item class="item-input" *ngIf="choosedIsDriving==no">\n      <ion-label text-wrap color="dark">回场里程:</ion-label>\n      <ion-input type="text" text-end placeholder="请输入回场里程"></ion-input>\n    </ion-item>\n    <ion-item class="item-input">\n      <ion-label text-wrap color="dark">费用:</ion-label>\n      <ion-input type="text" text-end placeholder="请输入费用"></ion-input>\n    </ion-item>\n  </ion-list>\n  <button class="button button-block button-positive" full (click)="sendApply()">\n    提交申请\n  </button>\n</ion-content>\n'/*ion-inline-end:"C:\Users\choiw\car\src\pages\apply-car-consume-log\apply-car-consume-log.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
-    ], ApplyCarConsumeLogPage);
-    return ApplyCarConsumeLogPage;
-}());
-
-//# sourceMappingURL=apply-car-consume-log.js.map
 
 /***/ }),
 
@@ -591,6 +591,63 @@ var ApplydoPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ApproverHomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__approval_order_info_approval_order_info__ = __webpack_require__(122);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the ApproverHomePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ApproverHomePage = /** @class */ (function () {
+    function ApproverHomePage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.tabsIndex = 0;
+    }
+    ApproverHomePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ApproverHomePage');
+    };
+    ApproverHomePage.prototype.switchTabs = function (index) {
+        this.tabsIndex = index;
+    };
+    ApproverHomePage.prototype.goback = function () {
+        this.navCtrl.pop();
+    };
+    ApproverHomePage.prototype.goOrderInfo = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__approval_order_info_approval_order_info__["a" /* ApprovalOrderInfoPage */]);
+    };
+    ApproverHomePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-approver-home',template:/*ion-inline-start:"C:\Users\choiw\car\src\pages\approver-home\approver-home.html"*/'<!--\n  Generated template for the ApproverHomePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="content_head">\n\n  <ion-row class="head_nav_bar">\n    <ion-segment-button class="nav_back_button" (click)="goback()" item-start="">\n      <ion-icon name="arrow-back"></ion-icon>返回</ion-segment-button>\n    <ion-label align-items-center="" class="header">审批流</ion-label>\n  </ion-row>\n\n  <div class="col-33 col-offset-33 approvericon_wrap">\n    <img class="approvericon" src="assets/imgs/memberphoto.png" width="70px"/>\n  </div>\n  <div class="header_name">\n    <ion-label class="pname">Name</ion-label>\n    <ion-label class="dept">DEPT</ion-label>\n  </div>\n\n</ion-header>\n\n\n<ion-content padding has-subheader="false" class="content" delegate-handle="location" overflow-scroll="true">\n  <ion-row class="add_tab">\n    <ion-col class="col active"\n         (click)="switchTabs(0)"\n         ng-style="{color:views.tabIndex == 0?\'\':\'#bebebe\'}"\n          *ngIf="tabsIndex==0">\n      <ion-icon class="col_i" name="infinite"></ion-icon>\n      <ion-label class="col_p">待审批</ion-label>\n    </ion-col>\n    <ion-col class="col"\n         (click)="switchTabs(0)"\n         ng-style="{color:views.tabIndex == 0?\'\':\'#bebebe\'}"\n         *ngIf="tabsIndex!=0">\n      <ion-icon class="col_i" name="infinite"></ion-icon>\n      <ion-label class="col_p">待审批</ion-label>\n    </ion-col>\n    <ion-col class="col active"\n         (click)="switchTabs(1)"\n         ng-style="{color:views.tabIndex == 1?\'\':\'#bebebe\'}"\n          *ngIf="tabsIndex==1">\n      <ion-icon class="col_i" name="list-box"></ion-icon>\n      <ion-label class="col_p">已审批</ion-label>\n    </ion-col>\n    <ion-col class="col"\n         (click)="switchTabs(1)"\n         ng-style="{color:views.tabIndex == 1?\'\':\'#bebebe\'}"\n          *ngIf="tabsIndex!=1">\n      <ion-icon class="col_i" name="list-box"></ion-icon>\n      <ion-label class="col_p">已审批</ion-label>\n    </ion-col>\n  </ion-row>\n  <div class="con">\n    <div class="use_div" (click)="goOrderInfo()">\n      <ul class="use_ul">\n        <li class="use_ul_li">\n          <p class="use_ul_p">单号：</p>\n          <span class="use_ul_span">123321</span>\n        </li>\n        <li class="use_ul_li">\n          <p class="use_ul_p">申请日期：</p>\n          <span class="use_ul_span">2018/11/30</span>\n        </li>\n        <li class="use_ul_li">\n          <p class="use_ul_p">用车时间：</p>\n          <span class="use_ul_span">2018/1/30</span>\n        </li>\n        <li class="use_ul_li">\n          <p class="use_ul_p">出发地：</p>\n          <span class="use_ul_span">321</span>\n        </li>\n        <li class="use_ul_li">\n          <p class="use_ul_p">目的地：</p>\n          <span class="use_ul_span">456</span>\n        </li>\n\n      </ul>\n    </div>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\choiw\car\src\pages\approver-home\approver-home.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+    ], ApproverHomePage);
+    return ApproverHomePage;
+}());
+
+//# sourceMappingURL=approver-home.js.map
+
+/***/ }),
+
+/***/ 122:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ApprovalOrderInfoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
@@ -649,63 +706,6 @@ var ApprovalOrderInfoPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 122:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ApproverHomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__approval_order_info_approval_order_info__ = __webpack_require__(121);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-/**
- * Generated class for the ApproverHomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var ApproverHomePage = /** @class */ (function () {
-    function ApproverHomePage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.tabsIndex = 0;
-    }
-    ApproverHomePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ApproverHomePage');
-    };
-    ApproverHomePage.prototype.switchTabs = function (index) {
-        this.tabsIndex = index;
-    };
-    ApproverHomePage.prototype.goback = function () {
-        this.navCtrl.pop();
-    };
-    ApproverHomePage.prototype.goOrderInfo = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__approval_order_info_approval_order_info__["a" /* ApprovalOrderInfoPage */]);
-    };
-    ApproverHomePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-approver-home',template:/*ion-inline-start:"C:\Users\choiw\car\src\pages\approver-home\approver-home.html"*/'<!--\n  Generated template for the ApproverHomePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="content_head">\n\n  <ion-row class="head_nav_bar">\n    <ion-segment-button class="nav_back_button" (click)="goback()" item-start="">\n      <ion-icon name="arrow-back"></ion-icon>返回</ion-segment-button>\n    <ion-label align-items-center="" class="header">审批流</ion-label>\n  </ion-row>\n\n  <div class="col-33 col-offset-33 approvericon_wrap">\n    <img class="approvericon" src="assets/imgs/memberphoto.png" width="70px"/>\n  </div>\n  <div class="header_name">\n    <ion-label class="pname">Name</ion-label>\n    <ion-label class="dept">DEPT</ion-label>\n  </div>\n\n</ion-header>\n\n\n<ion-content padding has-subheader="false" class="content" delegate-handle="location" overflow-scroll="true">\n  <ion-row class="add_tab">\n    <ion-col class="col active"\n         (click)="switchTabs(0)"\n         ng-style="{color:views.tabIndex == 0?\'\':\'#bebebe\'}"\n          *ngIf="tabsIndex==0">\n      <ion-icon class="col_i" name="infinite"></ion-icon>\n      <ion-label class="col_p">待审批</ion-label>\n    </ion-col>\n    <ion-col class="col"\n         (click)="switchTabs(0)"\n         ng-style="{color:views.tabIndex == 0?\'\':\'#bebebe\'}"\n         *ngIf="tabsIndex!=0">\n      <ion-icon class="col_i" name="infinite"></ion-icon>\n      <ion-label class="col_p">待审批</ion-label>\n    </ion-col>\n    <ion-col class="col active"\n         (click)="switchTabs(1)"\n         ng-style="{color:views.tabIndex == 1?\'\':\'#bebebe\'}"\n          *ngIf="tabsIndex==1">\n      <ion-icon class="col_i" name="list-box"></ion-icon>\n      <ion-label class="col_p">已审批</ion-label>\n    </ion-col>\n    <ion-col class="col"\n         (click)="switchTabs(1)"\n         ng-style="{color:views.tabIndex == 1?\'\':\'#bebebe\'}"\n          *ngIf="tabsIndex!=1">\n      <ion-icon class="col_i" name="list-box"></ion-icon>\n      <ion-label class="col_p">已审批</ion-label>\n    </ion-col>\n  </ion-row>\n  <div class="con">\n    <div class="use_div" (click)="goOrderInfo()">\n      <ul class="use_ul">\n        <li class="use_ul_li">\n          <p class="use_ul_p">单号：</p>\n          <span class="use_ul_span">123321</span>\n        </li>\n        <li class="use_ul_li">\n          <p class="use_ul_p">申请日期：</p>\n          <span class="use_ul_span">2018/11/30</span>\n        </li>\n        <li class="use_ul_li">\n          <p class="use_ul_p">用车时间：</p>\n          <span class="use_ul_span">2018/1/30</span>\n        </li>\n        <li class="use_ul_li">\n          <p class="use_ul_p">出发地：</p>\n          <span class="use_ul_span">321</span>\n        </li>\n        <li class="use_ul_li">\n          <p class="use_ul_p">目的地：</p>\n          <span class="use_ul_span">456</span>\n        </li>\n\n      </ul>\n    </div>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\choiw\car\src\pages\approver-home\approver-home.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
-    ], ApproverHomePage);
-    return ApproverHomePage;
-}());
-
-//# sourceMappingURL=approver-home.js.map
-
-/***/ }),
-
 /***/ 123:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -713,7 +713,7 @@ var ApproverHomePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CarConsumeLogPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__apply_car_consume_log_apply_car_consume_log__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__apply_car_consume_log_apply_car_consume_log__ = __webpack_require__(115);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -764,65 +764,6 @@ var CarConsumeLogPage = /** @class */ (function () {
 /***/ }),
 
 /***/ 124:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CarPeccancyPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__apply_car_peccancy_apply_car_peccancy__ = __webpack_require__(116);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-/**
- * Generated class for the CarPeccancyPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var CarPeccancyPage = /** @class */ (function () {
-    function CarPeccancyPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.tabsIndex = 0;
-        this.name = "name";
-        this.dept = "dept";
-    }
-    CarPeccancyPage.prototype.switchTabs = function (index) {
-        this.tabsIndex = index;
-    };
-    CarPeccancyPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad CarPeccancyPage');
-    };
-    CarPeccancyPage.prototype.goback = function () {
-        this.navCtrl.pop();
-    };
-    CarPeccancyPage.prototype.carPeccancyApply = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__apply_car_peccancy_apply_car_peccancy__["a" /* ApplyCarPeccancyPage */]);
-    };
-    CarPeccancyPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-car-peccancy',template:/*ion-inline-start:"C:\Users\choiw\car\src\pages\car-peccancy\car-peccancy.html"*/'<!--\n  Generated template for the CarPeccancyPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="content_head">\n\n  <ion-row class="head_nav_bar">\n    <ion-segment-button class="nav_back_button" (click)="goback()" item-start="">\n      <ion-icon name="arrow-back"></ion-icon>返回</ion-segment-button>\n    <ion-label align-items-center="" class="header">违章申请</ion-label>\n  </ion-row>\n\n  <div class="col-33 col-offset-33 approvericon_wrap">\n    <img class="approvericon" src="assets/imgs/memberphoto.png" width="70px"/>\n  </div>\n  <div class="header_name">\n    <p class="pname">{{this.name}}</p>\n    <span class="dept">({{this.dept}})</span>\n  </div>\n\n</ion-header>\n\n\n<ion-content padding has-subheader="false" class="content" delegate-handle="location" overflow-scroll="true">\n  <ion-row class="add_tab">\n    <ion-col class="col active"\n             (click)="switchTabs(0)"\n             ng-style="{color:views.tabIndex == 0?\'\':\'#bebebe\'}"\n             *ngIf="tabsIndex==0">\n      <ion-icon class="col_i" name="car"></ion-icon>\n      <ion-label class="col_p">当前违章申请</ion-label>\n    </ion-col>\n    <ion-col class="col"\n             (click)="switchTabs(0)"\n             ng-style="{color:views.tabIndex == 0?\'\':\'#bebebe\'}"\n             *ngIf="tabsIndex!=0">\n      <ion-icon class="col_i" name="car"></ion-icon>\n      <ion-label class="col_p">当前违章申请</ion-label>\n    </ion-col>\n    <ion-col class="col active"\n             (click)="switchTabs(1)"\n             ng-style="{color:views.tabIndex == 1?\'\':\'#bebebe\'}"\n             *ngIf="tabsIndex==1">\n      <ion-icon class="col_i" name="list-box"></ion-icon>\n      <ion-label class="col_p">违章记录</ion-label>\n    </ion-col>\n    <ion-col class="col"\n             (click)="switchTabs(1)"\n             ng-style="{color:views.tabIndex == 1?\'\':\'#bebebe\'}"\n             *ngIf="tabsIndex!=1">\n      <ion-icon class="col_i" name="list-box"></ion-icon>\n      <ion-label class="col_p">违章记录</ion-label>\n    </ion-col>\n  </ion-row>\n\n  <ion-item class="padding-horizontal btn_div" *ngIf="tabsIndex==0">\n    <button class="button button-block button-positive" (click)="carPeccancyApply()">\n      违章登记\n    </button>\n  </ion-item>\n</ion-content>\n'/*ion-inline-end:"C:\Users\choiw\car\src\pages\car-peccancy\car-peccancy.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
-    ], CarPeccancyPage);
-    return CarPeccancyPage;
-}());
-
-//# sourceMappingURL=car-peccancy.js.map
-
-/***/ }),
-
-/***/ 125:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -903,6 +844,65 @@ var CarMonitorPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=car-monitor.js.map
+
+/***/ }),
+
+/***/ 125:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CarPeccancyPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__apply_car_peccancy_apply_car_peccancy__ = __webpack_require__(117);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the CarPeccancyPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var CarPeccancyPage = /** @class */ (function () {
+    function CarPeccancyPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.tabsIndex = 0;
+        this.name = "name";
+        this.dept = "dept";
+    }
+    CarPeccancyPage.prototype.switchTabs = function (index) {
+        this.tabsIndex = index;
+    };
+    CarPeccancyPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad CarPeccancyPage');
+    };
+    CarPeccancyPage.prototype.goback = function () {
+        this.navCtrl.pop();
+    };
+    CarPeccancyPage.prototype.carPeccancyApply = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__apply_car_peccancy_apply_car_peccancy__["a" /* ApplyCarPeccancyPage */]);
+    };
+    CarPeccancyPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-car-peccancy',template:/*ion-inline-start:"C:\Users\choiw\car\src\pages\car-peccancy\car-peccancy.html"*/'<!--\n  Generated template for the CarPeccancyPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="content_head">\n\n  <ion-row class="head_nav_bar">\n    <ion-segment-button class="nav_back_button" (click)="goback()" item-start="">\n      <ion-icon name="arrow-back"></ion-icon>返回</ion-segment-button>\n    <ion-label align-items-center="" class="header">违章申请</ion-label>\n  </ion-row>\n\n  <div class="col-33 col-offset-33 approvericon_wrap">\n    <img class="approvericon" src="assets/imgs/memberphoto.png" width="70px"/>\n  </div>\n  <div class="header_name">\n    <p class="pname">{{this.name}}</p>\n    <span class="dept">({{this.dept}})</span>\n  </div>\n\n</ion-header>\n\n\n<ion-content padding has-subheader="false" class="content" delegate-handle="location" overflow-scroll="true">\n  <ion-row class="add_tab">\n    <ion-col class="col active"\n             (click)="switchTabs(0)"\n             ng-style="{color:views.tabIndex == 0?\'\':\'#bebebe\'}"\n             *ngIf="tabsIndex==0">\n      <ion-icon class="col_i" name="car"></ion-icon>\n      <ion-label class="col_p">当前违章申请</ion-label>\n    </ion-col>\n    <ion-col class="col"\n             (click)="switchTabs(0)"\n             ng-style="{color:views.tabIndex == 0?\'\':\'#bebebe\'}"\n             *ngIf="tabsIndex!=0">\n      <ion-icon class="col_i" name="car"></ion-icon>\n      <ion-label class="col_p">当前违章申请</ion-label>\n    </ion-col>\n    <ion-col class="col active"\n             (click)="switchTabs(1)"\n             ng-style="{color:views.tabIndex == 1?\'\':\'#bebebe\'}"\n             *ngIf="tabsIndex==1">\n      <ion-icon class="col_i" name="list-box"></ion-icon>\n      <ion-label class="col_p">违章记录</ion-label>\n    </ion-col>\n    <ion-col class="col"\n             (click)="switchTabs(1)"\n             ng-style="{color:views.tabIndex == 1?\'\':\'#bebebe\'}"\n             *ngIf="tabsIndex!=1">\n      <ion-icon class="col_i" name="list-box"></ion-icon>\n      <ion-label class="col_p">违章记录</ion-label>\n    </ion-col>\n  </ion-row>\n\n  <ion-item class="padding-horizontal btn_div" *ngIf="tabsIndex==0">\n    <button class="button button-block button-positive" (click)="carPeccancyApply()">\n      违章登记\n    </button>\n  </ion-item>\n</ion-content>\n'/*ion-inline-end:"C:\Users\choiw\car\src\pages\car-peccancy\car-peccancy.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+    ], CarPeccancyPage);
+    return CarPeccancyPage;
+}());
+
+//# sourceMappingURL=car-peccancy.js.map
 
 /***/ }),
 
@@ -1263,7 +1263,7 @@ var DriverHomePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverOrderInfoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_call_number__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_call_number__ = __webpack_require__(196);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1352,12 +1352,57 @@ var DriverOrderInfoPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ForgetPasswordPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the ForgetPasswordPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ForgetPasswordPage = /** @class */ (function () {
+    function ForgetPasswordPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    ForgetPasswordPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ForgetPasswordPage');
+    };
+    ForgetPasswordPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-forget-password',template:/*ion-inline-start:"C:\Users\choiw\car\src\pages\forget-password\forget-password.html"*/'<!--\n  Generated template for the ForgetPasswordPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar align-title="center" color="primary">\n    <ion-title>忘记密码</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding has-subheader="false" class="content">\n  <ion-card>\n    <ion-card-header class="item item-divider card_title">\n      如需重置密码，请联系管理员\n    </ion-card-header>\n    <ion-list>\n    <ion-label>管理员名字 : 陈航天</ion-label>\n    <ion-label>管理员手机 : 13822222863</ion-label>\n    <ion-label>管理员邮箱 : 13822222863@139.com</ion-label>\n    </ion-list>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\Users\choiw\car\src\pages\forget-password\forget-password.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+    ], ForgetPasswordPage);
+    return ForgetPasswordPage;
+}());
+
+//# sourceMappingURL=forget-password.js.map
+
+/***/ }),
+
+/***/ 134:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MemberPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__choose_dept_choose_dept__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__reset_password_reset_password__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modify_phone_modify_phone__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__reset_password_reset_password__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modify_phone_modify_phone__ = __webpack_require__(136);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__about_about__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__login_login__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_storage__ = __webpack_require__(31);
@@ -1433,7 +1478,7 @@ var MemberPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 134:
+/***/ 135:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1495,7 +1540,7 @@ var ResetPasswordPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 135:
+/***/ 136:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1546,24 +1591,23 @@ var ModifyPhonePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'page-modify-phone',template:/*ion-inline-start:"C:\Users\choiw\car\src\pages\modify-phone\modify-phone.html"*/'<!--\n  Generated template for the ModifyPhonePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar align-title="center" color="primary">\n    <ion-title>修改联系电话</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding has-subheader="false" class="content">\n  <ion-item item-start>\n    <ion-input type="text" clearInput placeholder="请输入您的联系电话" #phoneNum [(ngModel)]="this.phone"></ion-input>\n  </ion-item>\n  <ion-item>\n    <button ion-button block positive class="button-positive" (click)="updatePhone()">\n      确认修改\n    </button>\n  </ion-item>\n</ion-content>\n'/*ion-inline-end:"C:\Users\choiw\car\src\pages\modify-phone\modify-phone.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_global_data_global_data__["a" /* GlobalData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_global_data_global_data__["a" /* GlobalData */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_global_data_global_data__["a" /* GlobalData */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
     ], ModifyPhonePage);
     return ModifyPhonePage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=modify-phone.js.map
 
 /***/ }),
 
-/***/ 136:
+/***/ 137:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReportTablePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__use_car_count_use_car_count__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__use_car_count_use_car_count__ = __webpack_require__(138);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1606,7 +1650,7 @@ var ReportTablePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 137:
+/***/ 138:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1665,14 +1709,14 @@ var UseCarCountPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 138:
+/***/ 139:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecordPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_registration_add_registration__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_registration_add_registration__ = __webpack_require__(116);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1719,7 +1763,7 @@ var RecordPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 139:
+/***/ 140:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1776,7 +1820,7 @@ var MaintainApplyPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 140:
+/***/ 141:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1828,7 +1872,7 @@ var MaintainApprovalPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 152:
+/***/ 153:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -1841,11 +1885,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 152;
+webpackEmptyAsyncContext.id = 153;
 
 /***/ }),
 
-/***/ 193:
+/***/ 194:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -1858,19 +1902,19 @@ var map = {
 		38
 	],
 	"../pages/add-registration/add-registration.module": [
-		335,
+		336,
 		37
 	],
 	"../pages/apply-car-consume-log/apply-car-consume-log.module": [
-		337,
+		335,
 		36
 	],
 	"../pages/apply-car-peccancy/apply-car-peccancy.module": [
-		336,
+		338,
 		35
 	],
 	"../pages/apply-info/apply-info.module": [
-		338,
+		337,
 		3
 	],
 	"../pages/apply/apply.module": [
@@ -1882,11 +1926,11 @@ var map = {
 		33
 	],
 	"../pages/approval-order-info/approval-order-info.module": [
-		341,
+		342,
 		32
 	],
 	"../pages/approver-home/approver-home.module": [
-		342,
+		341,
 		31
 	],
 	"../pages/car-back/car-back.module": [
@@ -1894,11 +1938,11 @@ var map = {
 		2
 	],
 	"../pages/car-consume-log-order-info/car-consume-log-order-info.module": [
-		345,
+		344,
 		1
 	],
 	"../pages/car-consume-log/car-consume-log.module": [
-		344,
+		345,
 		30
 	],
 	"../pages/car-finish/car-finish.module": [
@@ -1906,11 +1950,11 @@ var map = {
 		0
 	],
 	"../pages/car-monitor/car-monitor.module": [
-		348,
+		347,
 		29
 	],
 	"../pages/car-peccancy/car-peccancy.module": [
-		347,
+		348,
 		28
 	],
 	"../pages/choose-car/choose-car.module": [
@@ -1982,11 +2026,11 @@ var map = {
 		11
 	],
 	"../pages/maintain-approval/maintain-approval.module": [
-		367,
+		366,
 		10
 	],
 	"../pages/member/member.module": [
-		366,
+		367,
 		9
 	],
 	"../pages/modify-phone/modify-phone.module": [
@@ -2002,11 +2046,11 @@ var map = {
 		6
 	],
 	"../pages/reset-password/reset-password.module": [
-		371,
+		372,
 		5
 	],
 	"../pages/use-car-count/use-car-count.module": [
-		372,
+		371,
 		4
 	]
 };
@@ -2021,12 +2065,12 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 193;
+webpackAsyncContext.id = 194;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 197:
+/***/ 198:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2053,7 +2097,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
-var APP_SERVE_URL = 'http://88.128.18.227:8080/cgb/v2/auth/';
+var APP_SERVE_URL = 'http://88.128.18.227:8080/cgb/';
 var REQUEST_TIMEOUT = 20000; // 请求超时时间,单位为毫秒
 var IS_DEBUG = true; // 是否开发(调试)模式
 var ConstantsProvider = /** @class */ (function () {
@@ -2072,7 +2116,7 @@ var ConstantsProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 198:
+/***/ 199:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2181,51 +2225,6 @@ var RestProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 241:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ForgetPasswordPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the ForgetPasswordPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var ForgetPasswordPage = /** @class */ (function () {
-    function ForgetPasswordPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    ForgetPasswordPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ForgetPasswordPage');
-    };
-    ForgetPasswordPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-forget-password',template:/*ion-inline-start:"C:\Users\choiw\car\src\pages\forget-password\forget-password.html"*/'<!--\n  Generated template for the ForgetPasswordPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar align-title="center" color="primary">\n    <ion-title>忘记密码</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding has-subheader="false" class="content">\n  <ion-card>\n    <ion-card-header class="item item-divider card_title">\n      如需重置密码，请联系管理员\n    </ion-card-header>\n    <ion-list>\n    <ion-label>管理员名字 : 陈航天</ion-label>\n    <ion-label>管理员手机 : 13822222863</ion-label>\n    <ion-label>管理员邮箱 : 13822222863@139.com</ion-label>\n    </ion-list>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\Users\choiw\car\src\pages\forget-password\forget-password.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
-    ], ForgetPasswordPage);
-    return ForgetPasswordPage;
-}());
-
-//# sourceMappingURL=forget-password.js.map
-
-/***/ }),
-
 /***/ 242:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2248,60 +2247,60 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(238);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(240);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(325);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_app_version__ = __webpack_require__(326);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(327);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_home_home__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_login_login__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_forget_password_forget_password__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_forget_password_forget_password__ = __webpack_require__(133);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_storage__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_modify_phone_modify_phone__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_modify_phone_modify_phone__ = __webpack_require__(136);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_about_about__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_member_member__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_member_member__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_choose_dept_choose_dept__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_reset_password_reset_password__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_report_table_report_table__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_approver_home_approver_home__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_record_record__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_add_registration_add_registration__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_reset_password_reset_password__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_report_table_report_table__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_approver_home_approver_home__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_record_record__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_add_registration_add_registration__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_choose_destination_choose_destination__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_choose_origin_choose_origin__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_choose_order_comment_choose_order_comment__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_apply_apply__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_applydo_applydo__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_driver_home_driver_home__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_maintain_apply_maintain_apply__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_maintain_apply_maintain_apply__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_add_maintain_order_add_maintain_order__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_choose_car_choose_car__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_choose_maintain_shop_choose_maintain_shop__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_deal_car_peccancy_deal_car_peccancy__ = __webpack_require__(129);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_car_consume_log_car_consume_log__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_apply_car_consume_log_apply_car_consume_log__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_apply_car_consume_log_apply_car_consume_log__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_choose_driver_choose_driver__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_dispatch_home_dispatch_home__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_car_peccancy_car_peccancy__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_apply_car_peccancy_apply_car_peccancy__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_car_peccancy_car_peccancy__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_apply_car_peccancy_apply_car_peccancy__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_deal_car_consume_log_deal_car_consume_log__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_maintain_approval_maintain_approval__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_car_monitor_car_monitor__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_approval_order_info_approval_order_info__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_maintain_approval_maintain_approval__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_car_monitor_car_monitor__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_approval_order_info_approval_order_info__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_driver_order_info_driver_order_info__ = __webpack_require__(132);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_comment_comment__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_use_car_count_use_car_count__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_use_car_count_use_car_count__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pages_choose_status_choose_status__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__angular_common_http__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__providers_rest_rest__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__providers_rest_rest__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__providers_storage_storage__ = __webpack_require__(328);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__ionic_native_call_number__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50_ionic2_rating__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__ionic_native_call_number__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50_ionic2_rating__ = __webpack_require__(241);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__providers_global_data_global_data__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__providers_utils_utils__ = __webpack_require__(329);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__ionic_native_toast__ = __webpack_require__(330);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__ionic_native_network__ = __webpack_require__(331);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__ionic_native_app_minimize__ = __webpack_require__(332);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__providers_constants_constants__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__providers_constants_constants__ = __webpack_require__(198);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2418,20 +2417,20 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/about/about.module#AboutPageModule', name: 'AboutPage', segment: 'about', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/add-maintain-order/add-maintain-order.module#AddMaintainOrderPageModule', name: 'AddMaintainOrderPage', segment: 'add-maintain-order', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/add-registration/add-registration.module#AddRegistrationPageModule', name: 'AddRegistrationPage', segment: 'add-registration', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/apply-car-peccancy/apply-car-peccancy.module#ApplyCarPeccancyPageModule', name: 'ApplyCarPeccancyPage', segment: 'apply-car-peccancy', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/apply-car-consume-log/apply-car-consume-log.module#ApplyCarConsumeLogPageModule', name: 'ApplyCarConsumeLogPage', segment: 'apply-car-consume-log', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/add-registration/add-registration.module#AddRegistrationPageModule', name: 'AddRegistrationPage', segment: 'add-registration', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/apply-info/apply-info.module#ApplyInfoPageModule', name: 'ApplyInfoPage', segment: 'apply-info', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/apply-car-peccancy/apply-car-peccancy.module#ApplyCarPeccancyPageModule', name: 'ApplyCarPeccancyPage', segment: 'apply-car-peccancy', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/apply/apply.module#ApplyPageModule', name: 'ApplyPage', segment: 'apply', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/applydo/applydo.module#ApplydoPageModule', name: 'ApplydoPage', segment: 'applydo', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/approval-order-info/approval-order-info.module#ApprovalOrderInfoPageModule', name: 'ApprovalOrderInfoPage', segment: 'approval-order-info', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/approver-home/approver-home.module#ApproverHomePageModule', name: 'ApproverHomePage', segment: 'approver-home', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/approval-order-info/approval-order-info.module#ApprovalOrderInfoPageModule', name: 'ApprovalOrderInfoPage', segment: 'approval-order-info', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/car-back/car-back.module#CarBackPageModule', name: 'CarBackPage', segment: 'car-back', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/car-consume-log/car-consume-log.module#CarConsumeLogPageModule', name: 'CarConsumeLogPage', segment: 'car-consume-log', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/car-consume-log-order-info/car-consume-log-order-info.module#CarConsumeLogOrderInfoPageModule', name: 'CarConsumeLogOrderInfoPage', segment: 'car-consume-log-order-info', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/car-consume-log/car-consume-log.module#CarConsumeLogPageModule', name: 'CarConsumeLogPage', segment: 'car-consume-log', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/car-finish/car-finish.module#CarFinishPageModule', name: 'CarFinishPage', segment: 'car-finish', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/car-peccancy/car-peccancy.module#CarPeccancyPageModule', name: 'CarPeccancyPage', segment: 'car-peccancy', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/car-monitor/car-monitor.module#CarMonitorPageModule', name: 'CarMonitorPage', segment: 'car-monitor', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/car-peccancy/car-peccancy.module#CarPeccancyPageModule', name: 'CarPeccancyPage', segment: 'car-peccancy', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/choose-car/choose-car.module#ChooseCarPageModule', name: 'ChooseCarPage', segment: 'choose-car', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/choose-dept/choose-dept.module#ChooseDeptPageModule', name: 'ChooseDeptPage', segment: 'choose-dept', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/choose-destination/choose-destination.module#ChooseDestinationPageModule', name: 'ChooseDestinationPage', segment: 'choose-destination', priority: 'low', defaultHistory: [] },
@@ -2449,13 +2448,13 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/forget-password/forget-password.module#ForgetPasswordPageModule', name: 'ForgetPasswordPage', segment: 'forget-password', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/maintain-apply/maintain-apply.module#MaintainApplyPageModule', name: 'MaintainApplyPage', segment: 'maintain-apply', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/member/member.module#MemberPageModule', name: 'MemberPage', segment: 'member', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/maintain-approval/maintain-approval.module#MaintainApprovalPageModule', name: 'MaintainApprovalPage', segment: 'maintain-approval', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/member/member.module#MemberPageModule', name: 'MemberPage', segment: 'member', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/modify-phone/modify-phone.module#ModifyPhonePageModule', name: 'ModifyPhonePage', segment: 'modify-phone', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/record/record.module#RecordPageModule', name: 'RecordPage', segment: 'record', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/report-table/report-table.module#ReportTablePageModule', name: 'ReportTablePage', segment: 'report-table', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/reset-password/reset-password.module#ResetPasswordPageModule', name: 'ResetPasswordPage', segment: 'reset-password', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/use-car-count/use-car-count.module#UseCarCountPageModule', name: 'UseCarCountPage', segment: 'use-car-count', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/use-car-count/use-car-count.module#UseCarCountPageModule', name: 'UseCarCountPage', segment: 'use-car-count', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/reset-password/reset-password.module#ResetPasswordPageModule', name: 'ResetPasswordPage', segment: 'reset-password', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_11__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
@@ -2535,8 +2534,8 @@ var AppModule = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(239);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(239);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_login_login__ = __webpack_require__(62);
@@ -3310,14 +3309,15 @@ var ChooseDriverPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ts_md5__ = __webpack_require__(298);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ts_md5___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ts_md5__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_global_data_global_data__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_constants_constants__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_rest_rest__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__node_modules_angular_common_http__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__forget_password_forget_password__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ts_md5__ = __webpack_require__(298);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ts_md5___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ts_md5__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_global_data_global_data__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_constants_constants__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_rest_rest__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__node_modules_angular_common_http__ = __webpack_require__(35);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3337,6 +3337,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -3344,7 +3345,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var httpOptions = {
-    headers: new __WEBPACK_IMPORTED_MODULE_8__node_modules_angular_common_http__["c" /* HttpHeaders */]({ 'Content-Type': 'application/json;charset=UTF-8' })
+    headers: new __WEBPACK_IMPORTED_MODULE_9__node_modules_angular_common_http__["c" /* HttpHeaders */]({ 'Content-Type': 'application/json;charset=UTF-8' })
 };
 var LoginPage = /** @class */ (function () {
     function LoginPage(navCtrl, storage, http, restProvider, alertCtrl, loadingCtrl, globalData) {
@@ -3359,7 +3360,7 @@ var LoginPage = /** @class */ (function () {
         this.isShow = false;
         this.submitted = false;
         this.loginCheck = false;
-        this.url = __WEBPACK_IMPORTED_MODULE_6__providers_constants_constants__["a" /* APP_SERVE_URL */];
+        this.url = __WEBPACK_IMPORTED_MODULE_7__providers_constants_constants__["a" /* APP_SERVE_URL */];
     }
     LoginPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad LoginPage');
@@ -3386,8 +3387,11 @@ var LoginPage = /** @class */ (function () {
         this.isRemember = true;
         window.localStorage.setItem('isRemember', JSON.stringify(true));
         var pwd = password.toString();
-        var hashPwd = __WEBPACK_IMPORTED_MODULE_4_ts_md5__["Md5"].hashStr(pwd);
-        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_3__home_home__["a" /* HomePage */]);
+        var hashPwd = __WEBPACK_IMPORTED_MODULE_5_ts_md5__["Md5"].hashStr(pwd);
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__home_home__["a" /* HomePage */]);
+    };
+    LoginPage.prototype.goForgetPwd = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__forget_password_forget_password__["a" /* ForgetPasswordPage */]);
     };
     LoginPage.prototype.logInFail = function (message) {
         var alert = this.alertCtrl.create({
@@ -3415,13 +3419,13 @@ var LoginPage = /** @class */ (function () {
         }
         this.submitted = true;
         var pwd = password.value.toString();
-        var hashPwd = __WEBPACK_IMPORTED_MODULE_4_ts_md5__["Md5"].hashStr(pwd);
+        var hashPwd = __WEBPACK_IMPORTED_MODULE_5_ts_md5__["Md5"].hashStr(pwd);
         var name = username.value.toString();
         var param = { client_id: "string",
             username: name,
             password: hashPwd };
         this.showLoading();
-        this.http.post(this.url + 'login', param, httpOptions).subscribe(function (res) {
+        this.http.post(this.url + 'v2/auth/login', param, httpOptions).subscribe(function (res) {
             _this.hideLoading();
             if (res.code == 1) {
                 _this.submitted = true;
@@ -3441,10 +3445,10 @@ var LoginPage = /** @class */ (function () {
                     _this.storage.set("USER_INFO", JSON.stringify(data));
                     _this.storage.set('loginname', name);
                     _this.storage.set('loginpwd', pwd);
-                    _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_3__home_home__["a" /* HomePage */]);
+                    _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__home_home__["a" /* HomePage */]);
                     return;
                 }
-                _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__home_home__["a" /* HomePage */]);
+                _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__home_home__["a" /* HomePage */]);
                 return;
             }
             else if (res.code == 0) {
@@ -3467,8 +3471,8 @@ var LoginPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'page-login',template:/*ion-inline-start:"C:\Users\choiw\car\src\pages\login\login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n\n\n\n<ion-content padding class="login_page_content">\n    <div class="row">\n      <div class="col col-33 col-offset-33 loginicon_wrap">\n        <img class="loginicon" src="assets/imgs/memberphoto.png" width="70px"/>\n      </div>\n    </div>\n    <ion-list class="login_page_list" style="margin-top: 20px;">\n      <ion-item item-start>\n        <ion-icon item-start name="person" color="primary" class="smaller_icon"></ion-icon>\n        <ion-input type="text" clearInput placeholder="请输入您的账户" #username>\n        </ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-icon item-start name="lock" color="primary" class="smaller_icon"></ion-icon>\n        <ion-input [type]="isShow ? \'text\':\'password\'" clearInput placeholder="请输入您的密码" #password></ion-input>\n      </ion-item>\n\n      <ion-item no-lines>\n        <ion-label>\n          <ion-icon [ios]="isShow ? \'ios-eye\' : \'ios-eye-off\'" [md]="isShow ? \'md-eye\' : \'md-eye-off\'"></ion-icon>\n        显示密码</ion-label>\n        <ion-toggle checked="false" [(ngModel)]="isShow"></ion-toggle>\n      </ion-item>\n\n      <ion-item no-lines>\n        <ion-label>记住密码</ion-label>\n        <ion-toggle checked="false" [(ngModel)]="isRemember"></ion-toggle>\n      </ion-item>\n\n      <ion-item>\n      <button class="button button-block button-positive"  full (click)="logIn(username,password)">\n        登录\n      </button>\n      </ion-item>\n    </ion-list>\n      <ion-item class="login_page_forget_psw">\n      <a (click)="goForgetPwd()">忘记密码?</a>\n      </ion-item>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\choiw\car\src\pages\login\login.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_8__node_modules_angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_7__providers_rest_rest__["a" /* RestProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_5__providers_global_data_global_data__["a" /* GlobalData */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_9__node_modules_angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_8__providers_rest_rest__["a" /* RestProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_6__providers_global_data_global_data__["a" /* GlobalData */]])
     ], LoginPage);
     return LoginPage;
 }());
@@ -3486,19 +3490,19 @@ var LoginPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dispatch_home_dispatch_home__ = __webpack_require__(130);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__about_about__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__approver_home_approver_home__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__member_member__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__report_table_report_table__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__record_record__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__approver_home_approver_home__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__member_member__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__report_table_report_table__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__record_record__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__apply_apply__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__driver_home_driver_home__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__maintain_apply_maintain_apply__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__maintain_apply_maintain_apply__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__deal_car_peccancy_deal_car_peccancy__ = __webpack_require__(129);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__car_consume_log_car_consume_log__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__car_peccancy_car_peccancy__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__car_peccancy_car_peccancy__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__deal_car_consume_log_deal_car_consume_log__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__maintain_approval_maintain_approval__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__car_monitor_car_monitor__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__maintain_approval_maintain_approval__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__car_monitor_car_monitor__ = __webpack_require__(124);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_storage__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_global_data_global_data__ = __webpack_require__(44);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -3540,25 +3544,46 @@ var HomePage = /** @class */ (function () {
         this.showApproveIcon = false;
         this.showSpecialDuty = false;
         this.showMaintainIcon = false;
+        this.showDriverIcon = false;
+        this.showSign = false;
+        this.showBackIcon = false;
+        this.showDispatchIcon = false;
+        this.showCarLocation = false;
+        this.true = "true";
+        this.false = "false";
         this.storage.get('user').then(function (data) {
             _this.globalData.set_user(JSON.parse(data));
             _this.name = _this.globalData.get_user().name;
             _this.dept = _this.globalData.get_user().deptName;
             _this.resources = _this.globalData.get_user().resources;
+            _this.getStoredData();
         });
     }
     HomePage.prototype.getStoredData = function () {
         if (this.resources) {
-            for (var resourcesKey in this.resources) {
-                if (resourcesKey == "ordersView" || resourcesKey == "dutyLogView" || resourcesKey == "syslogView" ||
-                    resourcesKey == "useFuelView" || resourcesKey == "unitollLogView" || resourcesKey == "fuelDetailView") {
+            for (var key in this.resources) {
+                console.log(this.resources[key]);
+                if (this.resources[key] == "useCarRecord") {
+                    this.showBackIcon = true;
+                }
+                else if (this.resources[key] == "dutylogView" || this.resources[key] == "syslogView" || this.resources[key] == "useFuelView"
+                    || this.resources[key] == "unitollLogView" || this.resources[key] == "fuelDetailView" || this.resources[key] == "ordersView") {
                     this.showReportIcon = true;
                 }
-                else if (resourcesKey == "Approve") {
+                else if (this.resources[key] == "driver") {
+                    this.showDriverIcon = true;
+                    this.showMaintainIcon = true;
+                    this.showSign = true;
+                }
+                else if (this.resources[key] == "Approve") {
                     this.showApproveIcon = true;
                 }
-                else if (resourcesKey == "CarManager") {
+                else if (this.resources[key] == "CarManager") {
                     this.showSpecialDuty = true;
+                }
+                else if (this.resources[key] == "dispatcher") {
+                    this.showCarLocation = true;
+                    this.showDispatchIcon = true;
                 }
             }
         }
@@ -3610,7 +3635,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\choiw\car\src\pages\home\home.html"*/'<ion-header class="content_head">\n  <h2 class="header">车辆管理移动应用</h2>\n  <div class="col col-33 col-offset-33 loginicon_wrap">\n    <img class="loginicon" src="assets/imgs/memberphoto.png" width="70px"/>\n  </div>\n  <ion-list class="head_name">\n    <ion-label class="pname">{{this.name}}</ion-label>\n    <ion-label class="dept">{{this.dept}}</ion-label>\n  </ion-list>\n  <ion-buttons end>\n    <button ion-button class="signIn" (click)="signClick()" item-end></button>\n  </ion-buttons>\n</ion-header>\n\n<ion-content padding has-subheader="false" class="content">\n  <ion-label text-center class="menu_tit">--常用功能--</ion-label>\n  <ion-grid text-wrap>\n    <ion-row class="ul">\n      <ion-col col-4 class="li" (click)="goPassenger()">\n        <img class="box_img" src="../assets/imgs/icon2.png"/>\n        <ion-label class="text">用车申请</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="goApproverHome()">\n        <img class="box_img" src="../assets/imgs/icon6.png"/>\n        <ion-label class="text">用车审批</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="goReport()">\n        <img class="box_img" src="../assets/imgs/icon4.png"/>\n        <ion-label class="text">报表</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="goDriver()">\n        <img class="box_img" src="../assets/imgs/icon7.png"/>\n        <ion-label class="text">任务工单</ion-label>\n      </ion-col>\n      <ion-col col- class="li" (click)="goMaintainApply()">\n        <img class="box_img" src="../assets/imgs/carMaintain.png"/>\n        <ion-label class="text">维保申请</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="dealCarPeccancy()">\n        <img class="box_img" src="../assets/imgs/dealPeccancy.png"/>\n        <ion-label class="text">违章处理</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="goCarConsumeLog()">\n        <img class="box_img" src="../assets/imgs/refuelingRecord.png"/>\n        <ion-label text-wrap class="text">洗车加油记录</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="goDispatcher()">\n        <img class="box_img" src="../assets/imgs/icon3.png"/>\n        <ion-label class="text">车辆调度</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="goCarPeccancy()">\n        <img class="box_img" src="../assets/imgs/carPeccancy.png"/>\n        <ion-label class="text">车辆违章</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="dealCarConsumeLog()">\n        <img class="box_img" src="../assets/imgs/approveRefueling.png"/>\n        <ion-label class="text">洗车加油审批</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="goMaintainApproval()">\n        <img class="box_img" src="../assets/imgs/approveMaintain.png"/>\n        <ion-label class="text">维保审批</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="goCarLocation()">\n        <img class="box_img" src="../assets/imgs/icon5.png"/>\n        <ion-label class="text">车辆监控</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="goRegistration()">\n        <img class="box_img" src="../assets/imgs/icon8.png"/>\n        <ion-label class="text">用车登记</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="goMember()">\n        <img class="box_img" src="../assets/imgs/icon1.png"/>\n        <ion-label class="text">个人中心</ion-label>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-list>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\Users\choiw\car\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\choiw\car\src\pages\home\home.html"*/'<ion-header class="content_head">\n  <h2 class="header">车辆管理移动应用</h2>\n  <div class="col col-33 col-offset-33 loginicon_wrap">\n    <img class="loginicon" src="assets/imgs/memberphoto.png" width="70px"/>\n  </div>\n  <ion-list class="head_name">\n    <ion-label class="pname">{{this.name}}</ion-label>\n    <ion-label class="dept">{{this.dept}}</ion-label>\n  </ion-list>\n  <ion-buttons end>\n    <button ion-button class="signIn" (click)="signClick()" item-end *ngIf="showSign == true"></button>\n  </ion-buttons>\n</ion-header>\n\n<ion-content padding has-subheader="false" class="content">\n  <ion-label text-center class="menu_tit">--常用功能--</ion-label>\n  <ion-grid text-wrap>\n    <ion-row class="ul">\n      <ion-col col-4 class="li" (click)="goPassenger()">\n        <img class="box_img" src="../assets/imgs/icon2.png"/>\n        <ion-label class="text">用车申请</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="goApproverHome()" *ngIf="showApproveIcon == true">\n        <img class="box_img" src="../assets/imgs/icon6.png"/>\n        <ion-label class="text">用车审批</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="goReport()" *ngIf="showReportIcon == true">\n        <img class="box_img" src="../assets/imgs/icon4.png"/>\n        <ion-label class="text">报表</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="goDriver()" *ngIf="showDriverIcon == true">\n        <img class="box_img" src="../assets/imgs/icon7.png"/>\n        <ion-label class="text">任务工单</ion-label>\n      </ion-col>\n      <ion-col col- class="li" (click)="goMaintainApply()" *ngIf="showMaintainIcon == true">\n        <img class="box_img" src="../assets/imgs/carMaintain.png"/>\n        <ion-label class="text">维保申请</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="dealCarPeccancy()" *ngIf="showDriverIcon == true">\n        <img class="box_img" src="../assets/imgs/dealPeccancy.png"/>\n        <ion-label class="text">违章处理</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="goCarConsumeLog()" *ngIf="showDriverIcon == true">\n        <img class="box_img" src="../assets/imgs/refuelingRecord.png"/>\n        <ion-label text-wrap class="text">洗车加油记录</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="goDispatcher()" *ngIf="showDispatchIcon == true">\n        <img class="box_img" src="../assets/imgs/icon3.png"/>\n        <ion-label class="text">车辆调度</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="goCarPeccancy()" *ngIf="showDispatchIcon == true">\n        <img class="box_img" src="../assets/imgs/carPeccancy.png"/>\n        <ion-label class="text">车辆违章</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="dealCarConsumeLog()" *ngIf="showDispatchIcon == true">\n        <img class="box_img" src="../assets/imgs/approveRefueling.png"/>\n        <ion-label class="text">洗车加油审批</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="goMaintainApproval()" *ngIf="showDispatchIcon == true">\n        <img class="box_img" src="../assets/imgs/approveMaintain.png"/>\n        <ion-label class="text">维保审批</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="goCarLocation()" *ngIf="showCarLocation == true">\n        <img class="box_img" src="../assets/imgs/icon5.png"/>\n        <ion-label class="text">车辆监控</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="goRegistration()" *ngIf="showBackIcon == true">\n        <img class="box_img" src="../assets/imgs/icon8.png"/>\n        <ion-label class="text">用车登记</ion-label>\n      </ion-col>\n      <ion-col col-4 class="li" (click)="goMember()">\n        <img class="box_img" src="../assets/imgs/icon1.png"/>\n        <ion-label class="text">个人中心</ion-label>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-list>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\Users\choiw\car\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_17__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_18__providers_global_data_global_data__["a" /* GlobalData */]])
     ], HomePage);

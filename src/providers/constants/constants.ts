@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
   and Angular DI.
 */
 
-export const APP_SERVE_URL = 'http://88.128.18.227:8080/cgb/v2/auth/';
+export const APP_SERVE_URL = 'http://88.128.18.227:8080/cgb/';
 export const REQUEST_TIMEOUT = 20000; // 请求超时时间,单位为毫秒
 export const IS_DEBUG = true; // 是否开发(调试)模式
 @Injectable()

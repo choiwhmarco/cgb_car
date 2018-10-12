@@ -8,7 +8,7 @@
     <ion-label class="dept">{{this.dept}}</ion-label>
   </ion-list>
   <ion-buttons end>
-    <button ion-button class="signIn" (click)="signClick()" item-end></button>
+    <button ion-button class="signIn" (click)="signClick()" item-end *ngIf="showSign == true"></button>
   </ion-buttons>
 </ion-header>
 
@@ -20,51 +20,51 @@
         <img class="box_img" src="../assets/imgs/icon2.png"/>
         <ion-label class="text">用车申请</ion-label>
       </ion-col>
-      <ion-col col-4 class="li" (click)="goApproverHome()">
+      <ion-col col-4 class="li" (click)="goApproverHome()" *ngIf="showApproveIcon == true">
         <img class="box_img" src="../assets/imgs/icon6.png"/>
         <ion-label class="text">用车审批</ion-label>
       </ion-col>
-      <ion-col col-4 class="li" (click)="goReport()">
+      <ion-col col-4 class="li" (click)="goReport()" *ngIf="showReportIcon == true">
         <img class="box_img" src="../assets/imgs/icon4.png"/>
         <ion-label class="text">报表</ion-label>
       </ion-col>
-      <ion-col col-4 class="li" (click)="goDriver()">
+      <ion-col col-4 class="li" (click)="goDriver()" *ngIf="showDriverIcon == true">
         <img class="box_img" src="../assets/imgs/icon7.png"/>
         <ion-label class="text">任务工单</ion-label>
       </ion-col>
-      <ion-col col- class="li" (click)="goMaintainApply()">
+      <ion-col col- class="li" (click)="goMaintainApply()" *ngIf="showMaintainIcon == true">
         <img class="box_img" src="../assets/imgs/carMaintain.png"/>
         <ion-label class="text">维保申请</ion-label>
       </ion-col>
-      <ion-col col-4 class="li" (click)="dealCarPeccancy()">
+      <ion-col col-4 class="li" (click)="dealCarPeccancy()" *ngIf="showDriverIcon == true">
         <img class="box_img" src="../assets/imgs/dealPeccancy.png"/>
         <ion-label class="text">违章处理</ion-label>
       </ion-col>
-      <ion-col col-4 class="li" (click)="goCarConsumeLog()">
+      <ion-col col-4 class="li" (click)="goCarConsumeLog()" *ngIf="showDriverIcon == true">
         <img class="box_img" src="../assets/imgs/refuelingRecord.png"/>
         <ion-label text-wrap class="text">洗车加油记录</ion-label>
       </ion-col>
-      <ion-col col-4 class="li" (click)="goDispatcher()">
+      <ion-col col-4 class="li" (click)="goDispatcher()" *ngIf="showDispatchIcon == true">
         <img class="box_img" src="../assets/imgs/icon3.png"/>
         <ion-label class="text">车辆调度</ion-label>
       </ion-col>
-      <ion-col col-4 class="li" (click)="goCarPeccancy()">
+      <ion-col col-4 class="li" (click)="goCarPeccancy()" *ngIf="showDispatchIcon == true">
         <img class="box_img" src="../assets/imgs/carPeccancy.png"/>
         <ion-label class="text">车辆违章</ion-label>
       </ion-col>
-      <ion-col col-4 class="li" (click)="dealCarConsumeLog()">
+      <ion-col col-4 class="li" (click)="dealCarConsumeLog()" *ngIf="showDispatchIcon == true">
         <img class="box_img" src="../assets/imgs/approveRefueling.png"/>
         <ion-label class="text">洗车加油审批</ion-label>
       </ion-col>
-      <ion-col col-4 class="li" (click)="goMaintainApproval()">
+      <ion-col col-4 class="li" (click)="goMaintainApproval()" *ngIf="showDispatchIcon == true">
         <img class="box_img" src="../assets/imgs/approveMaintain.png"/>
         <ion-label class="text">维保审批</ion-label>
       </ion-col>
-      <ion-col col-4 class="li" (click)="goCarLocation()">
+      <ion-col col-4 class="li" (click)="goCarLocation()" *ngIf="showCarLocation == true">
         <img class="box_img" src="../assets/imgs/icon5.png"/>
         <ion-label class="text">车辆监控</ion-label>
       </ion-col>
-      <ion-col col-4 class="li" (click)="goRegistration()">
+      <ion-col col-4 class="li" (click)="goRegistration()" *ngIf="showBackIcon == true">
         <img class="box_img" src="../assets/imgs/icon8.png"/>
         <ion-label class="text">用车登记</ion-label>
       </ion-col>

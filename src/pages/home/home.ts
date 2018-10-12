@@ -33,12 +33,20 @@ export class HomePage {
   showApproveIcon: boolean = false;
   showSpecialDuty: boolean = false;
   showMaintainIcon: boolean = false;
+  showDriverIcon: boolean = false;
+  showSign: boolean = false;
+  showBackIcon: boolean = false;
+  showDispatchIcon: boolean = false;
+  showCarLocation: boolean = false;
+  true: string = "true";
+  false: string = "false";
   constructor(public navCtrl: NavController, public storage: Storage, private globalData: GlobalData) {
     this.storage.get('user').then(data=>{
       this.globalData.set_user(JSON.parse(data));
       this.name = this.globalData.get_user().name;
       this.dept = this.globalData.get_user().deptName;
       this.resources = this.globalData.get_user().resources;
+      this.getStoredData();
     });
   }
 
@@ -48,16 +56,29 @@ export class HomePage {
 
   public getStoredData() {
     if(this.resources){
-      for (let resourcesKey in this.resources) {
-        if(resourcesKey == "ordersView" || resourcesKey == "dutyLogView" || resourcesKey == "syslogView" ||
-          resourcesKey == "useFuelView" || resourcesKey == "unitollLogView" || resourcesKey == "fuelDetailView"){
+      for (let key in this.resources) {
+        console.log(this.resources[key]);
+        if(this.resources[key] == "useCarRecord"){
+          this.showBackIcon = true;
+        }
+        else if(this.resources[key] == "dutylogView" || this.resources[key] == "syslogView" || this.resources[key] == "useFuelView"
+        || this.resources[key] == "unitollLogView" || this.resources[key] == "fuelDetailView" || this.resources[key] == "ordersView") {
           this.showReportIcon = true;
         }
-        else if(resourcesKey == "Approve"){
+        else if(this.resources[key] == "driver"){
+          this.showDriverIcon = true;
+          this.showMaintainIcon = true;
+          this.showSign = true;
+        }
+        else if(this.resources[key] == "Approve"){
           this.showApproveIcon = true;
         }
-        else if(resourcesKey == "CarManager"){
+        else if(this.resources[key] == "CarManager"){
           this.showSpecialDuty = true;
+        }
+        else if(this.resources[key] == "dispatcher"){
+          this.showCarLocation = true;
+          this.showDispatchIcon = true;
         }
 
       }
